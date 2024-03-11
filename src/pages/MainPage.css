@@ -1,0 +1,39 @@
+.crtbtn {
+    background-color: #ff8800;
+    color: #ffffff;
+    padding: 16px 72px;
+    border: none;
+    border-radius: 4%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 13%;
+    margin-top: 15%;
+    box-shadow:
+    0 4px 4px rgba(0, 0, 0, 0.1),
+    0 -4px 4px rgba(0, 0, 0, 0.1),
+    4px 0 4px rgba(0, 0, 0, 0.1),
+    -4px 0 4px rgba(0, 0, 0, 0.1);
+
+}
+.Canberk{
+    position: fixed;
+    height: 100%;
+    top: 95px;
+    left: 13%;
+
+}
+
+.LogColumns{
+    display: flex;
+    justify-content: space-between;
+    background-color: #a83e3e;
+    position: fixed;
+    
+    width: 65%;
+    top: 320px;
+    left: 20%;
+}
+
+.label{
+
+}

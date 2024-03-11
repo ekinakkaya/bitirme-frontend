@@ -1,0 +1,62 @@
+.sidebar-container {
+    background-color: #9f1111;
+    height: 100vh;
+    position: fixed;
+    width: 13%;
+    top: 95px;
+    left: 0;
+    margin-right: auto;
+  }
+  
+  .sidebar {
+    padding: 20px;
+    color: #3f3f3f;
+    
+  }
+  
+  .sidebar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menu a {
+    text-decoration: none;
+    color: #ff8800;
+    display: block;
+    padding: 10px 0;
+  }
+  
+  .sidebar-menu a:hover {
+    background-color: #34495e;
+  }
+  
+  .sidebar-button {
+    background-color: #ff8800;
+    color: #ffffff; /* button text color */
+    padding: 8% 12%;
+    margin-bottom: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow:
+      0 4px 4px rgba(0, 0, 0, 0.1), 
+      0 -4px 4px rgba(0, 0, 0, 0.1),
+      4px 0 4px rgba(0, 0, 0, 0.1),
+      -4px 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-button:hover {
+    background-color: #2980b9; /* Updated button background color on hover */
+  }
+
+  .main_img{
+    padding-top: 30px;
+    width: 100%;
+  }

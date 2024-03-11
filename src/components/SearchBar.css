@@ -1,0 +1,21 @@
+.search-bar{
+    background-color: #9f1111;
+    padding: 8px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    position: fixed;
+    top: 250px;
+    left: 20%;
+    width: 65%;
+    color: white;
+
+}
+.label{
+
+}
+.search-button{
+    background-color: #ff8800;
+    color: white;
+}
