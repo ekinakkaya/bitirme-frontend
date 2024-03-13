@@ -15,40 +15,42 @@ const CreateTemplate: React.FC = () => {
   const createDocument = async () => {
     const requestBody = {
       content: inputBoxes.join("\n"),
-      fileName: 3, // Kullanıcının girdiği belge ismini kullan
-      userId: 3
+      fileName: "test.test", // Kullanıcının girdiği belge ismini kullan
+      userId: 1
     };
   
     try {
-      // Belge oluşturma isteği
-      const createResponse = await fetch("http://127.0.0.1:8081/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(requestBody)
-      });
+      //// Belge oluşturma isteği
+      //const createResponse = await fetch("http://127.0.0.1:8081/api/documents/create", {
+      //  method: "POST",
+      //  headers: {
+      //    "Content-Type": "application/json"
+      //  },
+      //  body: JSON.stringify(requestBody)
+      //});
+
+      //console.log(createResponse);
   
-      if (!createResponse.ok) {
-        console.error("Failed to create document");
-        return;
-      }
+      //if (!createResponse.ok) {
+      //  console.error("Failed to create document");
+      //  return;
+      //}
   
-      // Belge kimliğini al
-      const createdDocumentId = await createResponse.text();
+      //// Belge kimliğini al
+      //const createdDocumentId = await createResponse.text();
   
-      // Belgeyi indirme isteği
-      const downloadResponse = await fetch(`http://127.0.0.1:8081/api/documentsgenerateAndDownloadDocument/${createdDocumentId}`);
+      //// Belgeyi indirme isteği
+      //const downloadResponse = await fetch(`http://127.0.0.1:8081/api/documentsgenerateAndDownloadDocument/${createdDocumentId}`);
   
-      if (downloadResponse.ok) {
-        console.log("Document downloaded successfully");
-        // İşlemler başarılı olduğunda dosyayı indir
-        downloadDocument();
-      } else {
-        console.error("Failed to download document");
-      }
+      //if (downloadResponse.ok) {
+      //  console.log("Document downloaded successfully");
+      //  // İşlemler başarılı olduğunda dosyayı indir
+      //  downloadDocument();
+      //} else {
+      //  console.error("Failed to download document");
+      //}
     } catch (error) {
-      console.error("Error during document creation and download:", error);
+      console.error("Error during document creation: ", error);
     }
   };
   

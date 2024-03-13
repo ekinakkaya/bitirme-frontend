@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import "./Edit.css"; // Import the CSS file
 import PopUp from "../components/PopUp";
 
@@ -7,6 +8,8 @@ import PopUp from "../components/PopUp";
 
 
 const Edit: React.FC = () => {
+  const { id } = useParams();
+
   const [inputBoxes, setInputBoxes] = useState<string[]>([""]);
   const [displayedText, setDisplayedText] = useState<string[]>([""]);
   const [boxTypes, setBoxTypes] = useState<string[]>(["input"]); // Track the types of boxes
@@ -109,6 +112,46 @@ const Edit: React.FC = () => {
 
 
 
+  // mainpage'de create butonuna basıldığında dökümanı oluşturmalı
+  //const handleCreateDocument = async () => {
+  //  const requestBody = {
+  //    content: "",
+  //    fileName: "test",
+  //    userId: 1
+  //  }
+
+  //  // Belge oluşturma isteği
+  //  const createResponse = await fetch("http://127.0.0.1:8081/api/documents/create", {
+  //    method: "POST",
+  //    headers: {
+  //      "Content-Type": "application/json"
+  //    },
+  //    body: JSON.stringify(requestBody)
+  //  });
+
+  //  console.log(createResponse);
+  //}
+
+  const handleSaveDocument = async () => {
+    const requestBody = {
+      id: id,
+      content: inputBoxes.join("\n"),
+      fileName: "test",
+      userId: 1
+    }
+
+    // veritabanındaki document'in content içeriğini sayfadakiyle değiştir
+    const createResponse = await fetch("http://127.0.0.1:8081/api/documents/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(requestBody)
+    });
+
+    console.log(createResponse.json);
+  }
+
   return (
     <div className="container">
       <div className="inputBoxes">
@@ -155,7 +198,9 @@ const Edit: React.FC = () => {
             </PopUp>
           </div>
         ))}
+      <button onClick={() => handleSaveDocument()} type="submit">Save Document</button>
       </div>
+
       
       <div className="display-container">
         <h2>Display:</h2>

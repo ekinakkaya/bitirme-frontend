@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 import SearchBar from "../components/SearchBar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import DocumentMetadatas from "./../components/DocumentMetadatas";
 
 
 function MainPage() {
@@ -16,6 +17,7 @@ function MainPage() {
   const onCreateDocumentButtonClick = () => {
     navigate("/edit");
   }
+
   return (
     <>
       <div className="MainPage">
@@ -32,6 +34,7 @@ function MainPage() {
             <span className="label">Generated</span>
             <span className="label">Last Modified</span>
           </div>
+          <DocumentMetadatas />
         </div>
       </div>
     </>

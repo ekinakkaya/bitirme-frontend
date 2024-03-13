@@ -23,6 +23,10 @@ const router = createBrowserRouter([
     element: <Edit />,
   },
   {
+    path: "/Edit/:id",
+    element: <Edit />,
+  },
+  {
     path: "/CreateTemplate",
     element: <CreateTemplate />,
   },

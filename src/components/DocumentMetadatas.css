@@ -1,0 +1,16 @@
+.document-metadatas {
+    display: flex;
+    position: fixed;
+    color: black;
+    padding-top: 150px;
+    min-width: 100%;
+}
+
+.document-metadatas ul {
+    min-width: inherit;
+}
+
+.document-metadatas span {
+    min-width: 200px;
+    width: 200px;
+}
