@@ -28,8 +28,9 @@ function DocumentMetadatas() {
             {documentMetadatas.map((data, i) => (
                 <li key={i}>
                     <span>{data.id}</span>
-                    <span>{data.fileName}</span>
+                    <a href={`/Edit/${data.id}`}>{data.fileName}</a>
                     <span>{data.userId}</span>
+                    <a href={`http://127.0.0.1:8081/api/documents/generateAndDownloadDocument/${data.id}`}>Download</a>
                 </li>
             ))}
         </ul>
